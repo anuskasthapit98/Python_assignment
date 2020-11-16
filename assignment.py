@@ -1,4 +1,6 @@
-#Assignment #1
+#---------------------Assignment #1------------------------------------------------------------------------
+
+
 #Exercise 1. Assume that we execute the following assignment statements:
 
 width = 17
@@ -43,7 +45,8 @@ print("After remove method ", words)
 
 
 
-#Assignment #2
+#---------------------Assignment #2---------------------------------------------------------
+
 # Choose a list of your choice and find the sum of all elements of that list. 
 
 sums=0
@@ -87,9 +90,7 @@ string = input("Enter a word: ")
 print(string.upper())
 print(string.lower())
 
-
-
-#Assignment #3
+#---------------------------Assignment #3-----------------------------------------------------------------
 
 # Write a program to display all prime numbers from 1 to 100.
 for num in range (1, 101):
@@ -183,3 +184,135 @@ print(dict)
 
     
     
+#---------------------assignment #4-----------------------------------------------
+# USING FUNCTIONS
+
+# Write a program that will convert Fahrenheit to Celsius in degrees.
+
+def temperature (F):
+    celcius=(F-32)*5/9
+    print(celcius)
+
+F=int(input("Enter a temperature in Farenheit "))
+temperature (F)
+
+
+# Write a program that takes seconds as time units and converts it to minutes and seconds. 
+
+def convert(second):
+    minutes,second = divmod(second,60)
+    print(minutes ,':', second)
+second = int(input("Enter seconds: "))
+convert(second)
+
+
+# Exercise 4. Consider a list of any arbitrary elements. Your code should print the length of the list and first and fourth element of the list.
+
+
+def lens(l):
+    print(len(l))
+    print(l[0],l[3])
+l= ["Age", "Cabbage", "Cafe", "Gas","Apple","Cat","Mouse"]
+lens(l)
+
+
+# Exercise 5. Create a list of any arbitrary elements. Your code should show the list methods as pop, insert and remove. 
+
+
+def elements(words):
+    words.pop(2)
+    print("After pop method ", words)
+    words.insert(1,16)
+    print("After insert method ", words)
+    words.remove(5)
+    print("After remove method ", words)
+
+elements(words = [2, 1, 3, 5, 4, 3, 8])
+
+
+# Choose a list of your choice and find the sum of all elements of that list. 
+
+def sum(lists):
+    sums = 0
+    for item in lists:
+        sums += item
+    print(sums)
+
+sum(lists =  [2, 1, 3, 5, 4, 3, 8])
+
+# Write a program that returns a list which contains common elements from two lists. Avoid the duplicate elements from lists.
+
+c=[]
+def common(a,b):
+    for item in a:
+        if item in b and item not in c:
+            c.append(item)
+    print(c)
+
+a = [1, 1, 3, 5, 7, 9, 9]
+b = [2, 1, 6 ,9, 2, 1, 3, 5]
+common(a,b)
+
+# Write a code to ask an input from the user which is a string and display the string along with its length.
+
+def length(string):
+    print(string)
+    count = 0
+    for i in string:
+        count = count + 1
+    print(count)
+
+string = input("Enter a word: ")
+length(string)
+
+
+# Write a program to display all prime numbers from 1 to 100.
+
+def prime(number):
+    for num in range(2,number):
+        status = True
+        for i in range(2,num):
+            if num % i == 0:
+                status = False
+        if status:
+            print(num)
+
+
+prime(101)
+
+
+
+# Ask the user for a string and print out whether this string is a palindrome or not.
+
+def reverse(word):
+	x = ''
+	for i in range(len(word)):
+		x += word[len(word)-1-i]
+	return x
+
+word = input('give me a word:\n')
+x = reverse(word)
+if x == word:
+	print('This is a Palindrome')
+else:
+	print('This is NOT a Palindrome')
+
+
+
+# Create a dictionary that has a key value pair of letters and the number of occurrences of that letter in a string.
+        
+
+string = "pineapple"
+
+def chars(string):
+    dict = {}
+    for n in string:
+        keys = dict.keys()
+        if n in keys:
+            dict[n] += 1
+        else:
+            dict[n] = 1
+    return dict
+
+counts = chars(string)
+print(counts)
